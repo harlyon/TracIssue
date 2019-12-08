@@ -1,13 +1,13 @@
 exports.typeDefs = `
 type Employee {
-  _id: ID!
+  id: ID!
   firstname: String!
   lastname: String!
   email: String!
   position: String!
 }
 type Issue {
-  _id: ID!
+  id: ID!
   title: String!
   description: String!
   reportedBy: String!
@@ -16,24 +16,24 @@ type Issue {
   createdDate: String!
 }
 type User {
-  _id: ID!
-  username: String! #@unique
+  id: ID!
+  username: String!
   password: String!
   email: String!
   joinDate: String
 }
+type Query {
+  getIssues: [Issue]
+  getIssue(_id: ID!): Issue
+  getEmployees: [Employee]
+  getEmployee(_id: ID!): Employee
+  searchEmployees(searchTerm: String!) : [Employee]
+  searchIssues(searchTerm: String!) : [Issue]
+}
 type Token {
   token: String!
 }
-signinUser(username: String!, password: String!): Token
-signupUser(username: String!, email: String!, password: String!): Token
-type Query {
-  getIssues: [Issue]
-  getEmployees: [Employee]
-  searchEmployee(searchTerm: String : [Employee])
-  searchIssues(searchTerm: String : [Issue])
-}
-typeMutation {
+type Mutation {
   addIssue(
     title: String!
     description: String!
@@ -65,6 +65,15 @@ typeMutation {
     lastname: String!
     email: String!
     position: String!
-  )
+  ) : Employee
+  signinUser(
+    username: String!
+    password: String!
+  ) : Token
+  signupUser(
+    username: String!
+    email: String!
+    password: String!
+  ) : Token
 }
 `;
