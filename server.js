@@ -4,17 +4,16 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const { ApolloServer } = require("apollo-server-express");
 require("dotenv").config({ path: "./variables.env" });
-
-const app = express();
-app.use(cors());
-
-const PORT = process.env.PORT
-
 const { typeDefs } = require("./schema");
 const { resolvers } = require("./resolvers.js");
 const Employee = require("./models/Employees");
 const Issue = require("./models/Issues");
 const User = require("./models/Users");
+
+const app = express();
+app.use(cors());
+
+const PORT = process.env.PORT
 
 app.use(async (req, res, next) => {
   const token = req.headers["authorized"];
