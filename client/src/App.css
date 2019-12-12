@@ -1,3 +1,5 @@
-body {
-  background-color: rgb(25, 30, 57);
+@media (min-width: 1200px) {
+.mg-xl-l-60 {
+    padding-top: 60px;
+}
 }
