@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Landing from './Containers/Landing/Landing';
 import SignIn from './Containers/Form/SignIn';
+import Nav from './Components/Nav';
 
 function App() {
   return (
