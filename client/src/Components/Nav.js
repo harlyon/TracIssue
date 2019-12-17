@@ -2,19 +2,22 @@ import React from 'react';
 
 const Nav = () => {
   return (
-    <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light bd">
-        <a class="navbar-brand tx-bold tx-spacing--2" href="#">
-          <img style={{ height: "20%", width: "0%"}} src="https://i2.wp.com/www.swiftelearningservices.com/wp-content/uploads/2017/01/Bug-Tracker-2.png?fit=523%2C592&ssl=1" />
-        </a>
-          <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target="#navbarNav"    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <i data-feather="menu" class="wd-20 ht-20"></i>
-          </button>
-        {/* <div class="collapse navbar-collapse order-2" id="navbarNav">
-          <ul class="navbar-nav">...</ul>
-        </div> */}
-      </nav>
-    </div>
+    <header className="navbar navbar-header navbar-header-fixed">
+      <div className="navbar-brand">
+        <a href="#" className="df-logo">track<span>it</span></a>
+      </div>
+      <div id="navbarMenu" className="navbar-menu-wrapper">
+        <div className="navbar-menu-header">
+          <a href="../../index.html" className="df-logo">dash<span>forge</span></a>
+          <a id="mainMenuClose" href><i data-feather="x" /></a>
+        </div>
+      </div>
+      <div className="navbar-right">
+        <a href="http://dribbble.com/themepixels" className="btn btn-social"><i className="fa fa-dribbble" /></a>
+        <a href="https://github.com/themepixels" className="btn btn-social"><i className="fa fa-github" /></a>
+        <a href="https://twitter.com/themepixels" className="btn btn-social"><i className="fa fa-twitter" /></a>
+      </div>
+    </header>
   );
 };
 
